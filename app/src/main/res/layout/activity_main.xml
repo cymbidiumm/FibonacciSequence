@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#ba160c">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar"/>
+
+
+    <EditText
+        android:id="@+id/typeNumberEditText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:ems="8"
+        android:hint="@string/type_number"
+        android:textStyle="normal" />
+
+    <Button
+        android:id="@+id/getSequenceButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sequence"
+        android:background="@drawable/button"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textAllCaps="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@+id/typeNumberEditText"
+        android:layout_toRightOf="@id/typeNumberEditText"
+        android:padding="20dp"
+        android:textSize="10sp"
+        />
+
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reset"
+        android:background="@drawable/button"
+        android:textStyle="bold"
+        android:textColor="#ffffff"
+        android:textAllCaps="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:layout_toEndOf="@id/getSequenceButton"
+        android:layout_toRightOf="@id/getSequenceButton"
+        android:padding="20dp"
+        android:textSize="10sp" />
+
+
+
+
+
+
+
+
+
+</RelativeLayout>
