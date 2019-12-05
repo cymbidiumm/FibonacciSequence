@@ -8,15 +8,21 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.math.BigInteger;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText typeNumberEditText;
     private Button getSequenceButton;
     private Button resetButton;
+    private TextView textView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,9 +33,44 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         typeNumberEditText = (EditText) findViewById(R.id.typeNumberEditText);
-        getSequenceButton = (Button) findViewById(R.id.getSequenceButton);
-        resetButton = (Button) findViewById(R.id.resetButton);
+        getSequenceButton = (Button)findViewById(R.id.getSequenceButton);
+        resetButton = (Button)findViewById(R.id.resetButton);
+        textView = (TextView)findViewById(R.id.textView);
 
+        getSequenceButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                textView.setText(fibonacci(Integer.parseInt(typeNumberEditText.getText().toString())));
+            }
+        });
+
+        resetButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                textView.setText("");
+                typeNumberEditText.setText("");
+            }
+        });
+
+    
+
+    }
+
+    private String fibonacci(int n){
+        String text = "";
+        ArrayList<BigInteger> fibo = new ArrayList<>();
+        BigInteger first = new BigInteger("0");
+        BigInteger second = new BigInteger("1");
+        fibo.add(first);
+        fibo.add(second);
+        for(int i = 1; i<n; i++){
+            fibo.add(fibo.get(i).add(fibo.get(i-1)));
+        }
+        for(int i = 1; i <= n; i++){
+            text = text + i + ". " + fibo.get(i) + "\n" + "\n" ;
+        }
+
+        return text;
 
     }
 
@@ -68,4 +109,6 @@ public class MainActivity extends AppCompatActivity {
 
         }
     }
+
+
 }
