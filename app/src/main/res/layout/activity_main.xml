@@ -11,6 +11,11 @@
         android:id="@+id/toolbar"
         layout="@layout/toolbar"/>
 
+    <!--<item android:drawable="@drawable/button"-->
+        <!--android:duration="2500"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content" />-->
+
 
     <EditText
         android:id="@+id/typeNumberEditText"
@@ -29,7 +34,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Sequence"
-        android:background="@drawable/button"
+        android:background="@drawable/animation_btn"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textAllCaps="true"
@@ -37,8 +42,8 @@
         android:layout_marginBottom="8dp"
         android:layout_toEndOf="@+id/typeNumberEditText"
         android:layout_toRightOf="@id/typeNumberEditText"
-        android:padding="20dp"
-        android:textSize="10sp"
+        android:padding="10dp"
+        android:textSize="12sp"
         />
 
 
@@ -47,7 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Reset"
-        android:background="@drawable/button"
+        android:background="@drawable/animation_btn"
         android:textStyle="bold"
         android:textColor="#ffffff"
         android:textAllCaps="true"
@@ -55,8 +60,10 @@
         android:layout_marginBottom="8dp"
         android:layout_toEndOf="@id/getSequenceButton"
         android:layout_toRightOf="@id/getSequenceButton"
-        android:padding="20dp"
-        android:textSize="10sp" />
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:textSize="12sp" />
 
     <ScrollView
         android:id="@+id/scrollView"

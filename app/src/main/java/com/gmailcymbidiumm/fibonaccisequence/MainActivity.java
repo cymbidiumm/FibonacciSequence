@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,6 +24,9 @@ public class MainActivity extends AppCompatActivity {
     private Button getSequenceButton;
     private Button resetButton;
     private TextView textView;
+
+    private AnimationDrawable anim1;
+    private AnimationDrawable anim2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,8 +56,42 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    
 
+        anim1= (AnimationDrawable)getSequenceButton.getBackground();
+        anim1.setEnterFadeDuration(2300);
+        anim1.setExitFadeDuration(2300);
+
+        anim2 = (AnimationDrawable)resetButton.getBackground();
+        anim2.setEnterFadeDuration(2800);
+        anim2.setExitFadeDuration(2800);
+
+
+    }
+
+
+
+    @Override
+    protected void onResume(){
+        super.onResume();
+        if(anim1!=null && !anim1.isRunning()){
+            anim1.start();
+        }
+
+        if(anim2!=null && !anim2.isRunning()){
+            anim2.start();
+        }
+    }
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        if(anim1!=null && anim1.isRunning()){
+            anim1.stop();
+        }
+
+        if(anim2!=null && anim2.isRunning()){
+            anim2.stop();
+        }
     }
 
     private String fibonacci(int n){

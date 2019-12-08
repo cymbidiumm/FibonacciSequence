@@ -1,5 +1,7 @@
 <resources>
 
+
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
@@ -9,6 +11,16 @@
 
         //statusBar
         <item name="android:colorPrimaryDark">#5c180c</item>
+
+        //optionsMenu
+        <!--<item name="actionOverflowMenuStyle">@color/colorPrimary</item>-->
+
+        <!--<item name="textAppearanceLargePopupMenu">@color/colorAccent</item>-->
+
+        <item name="actionOverflowMenuStyle">@android:color/darker_gray</item>
+        <item name="textAppearanceLargePopupMenu">@android:color/white</item>
+
+
 
     </style>
 
