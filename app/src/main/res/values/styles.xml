@@ -10,7 +10,7 @@
         <item name="colorAccent">@color/colorAccent</item>
 
         //statusBar
-        <item name="android:colorPrimaryDark">#5c180c</item>
+        <!--<item name="android:colorPrimaryDark">#5c180c</item>-->
 
         //optionsMenu
         <!--<item name="actionOverflowMenuStyle">@color/colorPrimary</item>-->
@@ -19,9 +19,13 @@
 
         <item name="actionOverflowMenuStyle">@android:color/darker_gray</item>
         <item name="textAppearanceLargePopupMenu">@android:color/white</item>
+        <item name="android:textColor">#FFFFFF</item>
 
+    </style>
 
-
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!--<item name="android:textSize">25sp</item>-->
+        <item name="android:textColor">@android:color/white</item>
     </style>
 
 </resources>

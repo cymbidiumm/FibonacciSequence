@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Bundle;
 import android.view.Menu;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AnimationDrawable anim1;
     private AnimationDrawable anim2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -121,7 +123,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected( @NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id == R.id.item1){
+
+            Intent intent = new Intent(MainActivity.this,FibonacciFunFacts_activity.class);
+            startActivity(intent);
+
+            return true;
+        } else
+        if (id == R.id.item2){
+
+            Intent intent = new Intent(MainActivity.this,FibonacciCalendar_activity.class);
+            startActivity(intent);
+
+            return true;
+        }
+
+
+
         switch(item.getItemId()){
             case R.id.item1:
                 Toast.makeText(this,"Item 1 selected",Toast.LENGTH_SHORT).show();
@@ -143,6 +165,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this,"Subitem 3 selected",Toast.LENGTH_SHORT).show();
                 return true;
             default:
+
                 return super.onOptionsItemSelected(item);
 
         }
